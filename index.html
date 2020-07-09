@@ -6,6 +6,46 @@
     <title>Grey's Anatomy</title>
     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfy9aI6Mcv9k40TRdyDoArvSqb2tL5C4pULA&usqp=CAU">
     <style>
+
+    @keyframes circulacion {
+        0%{background: blue;}
+        50%{background: rgb(108, 108, 224); width: 100px; height: 100px;}
+        100%{background: rgb(165, 165, 201); width: 300px; height: 200px;}
+        0%{transform: translate(0px) scale(1.4) rotate(80deg);}
+        50%{transform: translate(-250px) scale(1.2) rotate(40deg);}
+        100%{transform: translate(-350px) scale(1) rotate(0deg);}
+    }
+
+    div.circulacion{
+        animation-name: circulacion;
+        animation-duration: 5s;
+        height: 50px;
+        animation-iteration-count: infinite;
+        float: right;
+    }
+
+
+
+    @keyframes movimiento{
+        from{
+            background-color: blue;
+            width: 100px;
+            height: 150px;
+        }
+        to{
+            background-color: rgb(68, 68, 146);
+            width: 150px;
+            height: 100px;
+            transform: rotate(90deg);
+        }
+    }
+
+    div.animation{
+        animation-name: movimiento;
+        animation-duration: 5s;
+        height: 100px;
+        animation-iteration-count: infinite;
+    }
     .grid-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -168,11 +208,13 @@
         </ul>
     </nav>
     <header>
-
+        
     </header>
     <main>
         <br>
         <br>
+        <div class="animation"></div>
+        <div class="circulacion"></div>
         <h2>GREY'S ANATOMY</h2>
         <h3>Serie de television estadounidense creada por Shonda Rhimes y protagonizada por Ellen Pompeo. Se estreno el 27 de Marzo de 2005 en la cadena ABC y narra el dia a dia de los cirujanos de un ficticio hospital de Seattle. Aunque la serie se rueda en los angeles.</h3>
         <h1>

@@ -5,47 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grey's Anatomy</title>
     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfy9aI6Mcv9k40TRdyDoArvSqb2tL5C4pULA&usqp=CAU">
+
     <style>
-
-    @keyframes circulacion {
-        0%{background: blue;}
-        50%{background: rgb(108, 108, 224); width: 100px; height: 100px;}
-        100%{background: rgb(165, 165, 201); width: 300px; height: 200px;}
-        0%{transform: translate(0px) scale(1.4) rotate(80deg);}
-        50%{transform: translate(-250px) scale(1.2) rotate(40deg);}
-        100%{transform: translate(-350px) scale(1) rotate(0deg);}
+    
+    @font-face {
+        font-family: 'icomoon';
+        src:  url('Fuentes/icomoon.eot?w2wxds');
+        src:  url('Fuentes/icomoon.eot?w2wxds#iefix') format('embedded-opentype'),
+            url('Fuentes/icomoon.ttf?w2wxds') format('truetype'),
+            url('Fuentes/icomoon.woff?w2wxds') format('woff'),
+            url('Fuentes/icomoon.svg?w2wxds#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
     }
 
-    div.circulacion{
-        animation-name: circulacion;
-        animation-duration: 5s;
-        height: 50px;
+  [class^="icon-"], [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+  .icon-corazon .path1:before {
+        content: "\e900";
+        color: rgb(27, 57, 84);
+    }
+  .icon-corazon .path2:before {
+        content: "\e901";
+        margin-left: -1em;
+        color: rgb(27, 57, 84);
+    }
+  .icon-corazon .path3:before {
+        content: "\e902";
+        margin-left: -1em;
+        color: rgb(22, 173, 225);
+    }
+  .icon-corazon .path4:before {
+        content: "\e903";
+        margin-left: -1em;
+        color: rgb(27, 57, 84);
+    }
+  .icon-cruz:before {
+        content: "\e904";
+        color: #319997;
+    }
+  .icon-folder:before {
+        content: "\e931";
+    }
+
+
+
+    @keyframes transito{
+        0%{color: rgb(76, 99, 173);}
+        100%{color: black;}
+        0%{transform: translate(-50%) scale(1.2);}
+        100%{transform: translate(-50%) scale(1);}
+    }
+
+    div.animado{
+        animation-name: transito;
+        animation-duration: 8s;
         animation-iteration-count: infinite;
-        float: right;
+        text-transform: uppercase;
+        float:right;
     }
-
-
 
     @keyframes movimiento{
         from{
-            background-color: blue;
             width: 100px;
             height: 150px;
+            transform: translate(250%);
         }
         to{
-            background-color: rgb(68, 68, 146);
             width: 150px;
             height: 100px;
-            transform: rotate(90deg);
+            transform: translate(300%);
         }
     }
 
     div.animation{
         animation-name: movimiento;
-        animation-duration: 5s;
-        height: 100px;
+        animation-duration: 7s;
+        width: 10%;
+        position: absolute;
         animation-iteration-count: infinite;
     }
+
+
     .grid-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -63,6 +118,8 @@
         padding: 15px 15px 15px 15px;
         border-style: solid;
     }
+
+
 
     .dropdown{
         position: relative;
@@ -84,8 +141,7 @@
     }
 
     ul{
-        margin: 0;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         list-style-type: none;
         overflow: visible;
         background-color: rgb(33, 33, 112);
@@ -118,6 +174,8 @@
         flex-direction: column;
     }
 
+
+
     #Res{
         text-align: center;
     }
@@ -140,6 +198,40 @@
         margin: 0 30px;
     }
 
+
+
+    @font-face{
+        font-family: buffalo;
+        src: url(fuentes/buffalo-inline-2-grunge.ttf);
+    }
+
+    div.fuente{
+        animation-name: none;
+        
+        color: black;
+        font-size: 80px;
+        padding: 20px;
+        text-align: center;
+        font-family: buffalo;
+    }
+
+    @font-face{
+        font-family: onblack;
+        src: url(fuentes/white-on-black.ttf);
+    }
+
+    div.Fuente2{
+        animation-name: none;
+        background-color: rgb(72, 114, 114);
+        color: black;
+        font-size: 50px;
+        padding: 20px;
+        text-align: center;
+        font-family: onblack;
+    }
+
+    
+
     h1{
         margin: 16px 0;
         text-transform: uppercase;
@@ -149,10 +241,6 @@
         align-items: center;
         text-align: center;
         font-weight: bolder;
-    }
-
-    h2{
-        text-align: center;
     }
 
     h3{
@@ -180,7 +268,19 @@
         font-weight: bold;
     }
 
-    
+    .big-size{
+        font-size: 30px;
+        
+        
+    }
+
+    #abajo{
+        text-align: center;
+        font-weight: bolder;
+        padding: 5px;
+        font-size: 30px;
+    }
+
     </style>
 </head>
 <body>
@@ -208,31 +308,39 @@
         </ul>
     </nav>
     <header>
+        <div class="animation">
+            <img class="animacion" src="img/Ambulancia.png" alt="">
+        </div>
         
     </header>
     <main>
         <br>
+        <div class="fuente">
+            <div class="animado">
+                GREY'S ANATOMY
+            </div>
+        </div>
         <br>
-        <div class="animation"></div>
-        <div class="circulacion"></div>
-        <h2>GREY'S ANATOMY</h2>
         <h3>Serie de television estadounidense creada por Shonda Rhimes y protagonizada por Ellen Pompeo. Se estreno el 27 de Marzo de 2005 en la cadena ABC y narra el dia a dia de los cirujanos de un ficticio hospital de Seattle. Aunque la serie se rueda en los angeles.</h3>
-        <h1>
+        <div class="Fuente2">
             Personajes
-        </h1>
+        </div>
+
         <div class="grid-container">
             <div class="Personaje">
                 <section id="Per-principal">
-                         <h4>Personajes Principales</h4>
-                        <p>Ellen Pompeo as Meredith Grey</p>
-                        <p>Justin Chambers as Alex Karev</p>
-                        <p>Chandra Wilson as Miranda Bailey</p>
-                        <p>James Pickens as Richard Webber</p>
-                        <p>Kevin Mckidd as Owen Hunt</p>
+                    <span class="icon-corazon big-size"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                    <h4>Personajes Principales</h4>
+                    <p>Ellen Pompeo as Meredith Grey</p>
+                    <p>Justin Chambers as Alex Karev</p>
+                    <p>Chandra Wilson as Miranda Bailey</p>
+                    <p>James Pickens as Richard Webber</p>
+                    <p>Kevin Mckidd as Owen Hunt</p>
                 </section>
             </div>
             <div class="Residente">
                 <section id="Res">
+                    <span class="icon-cruz big-size"></span>
                     <h4>Residentes</h4>
                     <p>Camilla Luddington as Jo wilson</p>
                     <p>Jason Winston as Ben Warren</p>
@@ -242,6 +350,7 @@
             </div>
             <div class="Se-fueron">
                 <section id="Fueron">
+                    <span class="icon-folder big-size"></span>
                     <h4>Personajes que se fueron</h4>
                     <p>Patrick Dempsey as Derek Shepherd</p>
                     <p>Sandra oh as Cristina Yang</p>
@@ -256,11 +365,10 @@
     <br>
     <br>
     <footer>
-        <h1>Siguelos en:</h1>
-        <div class="social">
-            <img src="img/Twitter.png" alt="https://twitter.com/GreysABC?s=08">
-            <img src="img/Instagram.png" alt="https://www.instagram.com/greysabc/">
-        </div>
+        <section id="abajo">
+            <p>Laura Quintero <br>
+                Trabajo Portafolio</p>
+        </section>
     </footer>
 
 </body>

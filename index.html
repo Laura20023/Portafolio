@@ -7,278 +7,841 @@
     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTfy9aI6Mcv9k40TRdyDoArvSqb2tL5C4pULA&usqp=CAU">
 
     <style>
+           /* query movil */
+        @media screen and (max-width: 600px;) {
+                @font-face {
+                font-family: 'icomoon';
+                src:  url('Fuentes/icomoon.eot?w2wxds');
+                src:  url('Fuentes/icomoon.eot?w2wxds#iefix') format('embedded-opentype'),
+                    url('Fuentes/icomoon.ttf?w2wxds') format('truetype'),
+                    url('Fuentes/icomoon.woff?w2wxds') format('woff'),
+                    url('Fuentes/icomoon.svg?w2wxds#icomoon') format('svg');
+                font-weight: normal;
+                font-style: normal;
+                font-display: block;
+            }
+
+            [class^="icon-"], [class*=" icon-"] {
+                /* use !important to prevent issues with browser extensions that change fonts */
+                font-family: 'icomoon' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .icon-corazon .path1:before {
+                    content: "\e900";
+                    color: rgb(27, 57, 84);
+                }
+            .icon-corazon .path2:before {
+                    content: "\e901";
+                    margin-left: -1em;
+                    color: rgb(27, 57, 84);
+                }
+            .icon-corazon .path3:before {
+                    content: "\e902";
+                    margin-left: -1em;
+                    color: rgb(22, 173, 225);
+                }
+            .icon-corazon .path4:before {
+                    content: "\e903";
+                    margin-left: -1em;
+                    color: rgb(27, 57, 84);
+                }
+            .icon-cruz:before {
+                    content: "\e904";
+                    color: #319997;
+                }
+            .icon-folder:before {
+                    content: "\e931";
+                }
+
+
+
+            @keyframes transito{
+                0%{color: rgb(76, 99, 173);}
+                100%{color: black;}
+                0%{transform: translate(-50%) scale(1.2);}
+                100%{transform: translate(-50%) scale(1);}
+            }
+
+            div.animado{
+                animation-name: transito;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                text-transform: uppercase;
+                float:right;
+            }
+
+            @keyframes movimiento{
+                from{
+                    width: 100px;
+                    height: 150px;
+                    transform: translate(250%);
+                }
+                to{
+                    width: 150px;
+                    height: 100px;
+                    transform: translate(300%);
+                }
+            }
+
+            div.animation{
+                animation-name: movimiento;
+                animation-duration: 7s;
+                width: 10%;
+                position: absolute;
+                animation-iteration-count: infinite;
+            }
+
+
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                justify-content:center;
+                margin: 60px;
+            }
+
+            .Se-Fueron{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                width: 250px;
+                padding: 15px 15px 15px 15px;
+                border-style: solid;
+            }
+
+            .Personaje{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .Residente{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+
+            .dropdown{
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content{
+                display: none;
+                position: absolute;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px;
+                padding: 12px 16px;
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content{
+                display: block;
+                transform: translate(50px,5px);
+            }
+
+            ul{
+                margin-bottom: 30px;
+                list-style-type: none;
+                overflow: visible;
+                background-color: rgb(33, 33, 112);
+            }
+
+            li{
+                float:left;
+            }
+
+            li a{
+                display: block;
+                background-color: rgb(13, 13, 117);
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover{
+                background-color: rgb(12, 73, 73);
+            }
+
+            ul ul{
+                margin: 0;
+                list-style-type: none;
+                overflow: visible;
+                padding: 0;
+                z-index: 0;
+                background-color: teal;
+                display: flex;
+                flex-direction: column;
+            }
+
+
+
+            #Res{
+                text-align: center;
+            }
+
+            #Per-principales{
+                text-align: left;
+            }
+
+            #Fueron{
+                text-align: right;
+            }
+
+            header{
+                background-image: url(https://kaylaquigley.files.wordpress.com/2016/05/greys-anatomy.jpeg);
+                padding: 165px;
+            }
+
+            body{
+                background-color: rgb(69, 129, 129);
+                margin: 0 30px;
+            }
+
+
+
+            @font-face{
+                font-family: buffalo;
+                src: url(Fuentes/buffalo-inline-2-grunge.ttf);
+            }
+
+            div.fuente{
+                animation-name: none;
+                color: black;
+                font-size: 80px;
+                padding: 20px;
+                text-align: center;
+                font-family: buffalo;
+            }
+
+            @font-face{
+                font-family: onblack;
+                src: url(Fuentes/white-on-black.ttf);
+            }
+
+            div.Fuente2{
+                animation-name: none;
+                background-color: rgb(72, 114, 114);
+                color: black;
+                font-size: 50px;
+                padding: 20px;
+                text-align: center;
+                font-family: onblack;
+            }
+
+
+
+            h1{
+                margin: 16px 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 200;
+                font-size: 18px;
+                align-items: center;
+                text-align: center;
+                font-weight: bolder;
+            }
+
+            h3{
+                text-align: center;
+                font-size: 20px;
+                text-transform:capitalize;
+                padding: 40px;
+                margin: 40px;
+                background-color: cadetblue;
+                
+            }
+
+            footer{
+                text-align: center;
+                background-color: rgb(104, 150, 150);
+            }
+
+            h4{
+                margin: 16px 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 200;
+                font-size: 18px;
+                align-items: center;
+                font-weight: bold;
+            }
+
+            .big-size{
+                font-size: 30px;
+                
+                
+            }
+
+            #abajo{
+                text-align: center;
+                font-weight: bolder;
+                padding: 5px;
+                font-size: 30px;
+            }
+        }
+
+            /* query pc*/
+        @media screen and (min-width: 900px;){
+            @font-face {
+                font-family: 'icomoon';
+                src:  url('Fuentes/icomoon.eot?w2wxds');
+                src:  url('Fuentes/icomoon.eot?w2wxds#iefix') format('embedded-opentype'),
+                    url('Fuentes/icomoon.ttf?w2wxds') format('truetype'),
+                    url('Fuentes/icomoon.woff?w2wxds') format('woff'),
+                    url('Fuentes/icomoon.svg?w2wxds#icomoon') format('svg');
+                font-weight: normal;
+                font-style: normal;
+                font-display: block;
+            }
+
+            [class^="icon-"], [class*=" icon-"] {
+                /* use !important to prevent issues with browser extensions that change fonts */
+                font-family: 'icomoon' !important;
+                speak: never;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .icon-corazon .path1:before {
+                    content: "\e900";
+                    color: rgb(27, 57, 84);
+                }
+            .icon-corazon .path2:before {
+                    content: "\e901";
+                    margin-left: -1em;
+                    color: rgb(27, 57, 84);
+                }
+            .icon-corazon .path3:before {
+                    content: "\e902";
+                    margin-left: -1em;
+                    color: rgb(22, 173, 225);
+                }
+            .icon-corazon .path4:before {
+                    content: "\e903";
+                    margin-left: -1em;
+                    color: rgb(27, 57, 84);
+                }
+            .icon-cruz:before {
+                    content: "\e904";
+                    color: #319997;
+                }
+            .icon-folder:before {
+                    content: "\e931";
+                }
+
+
+
+            @keyframes transito{
+                0%{color: rgb(76, 99, 173);}
+                100%{color: black;}
+                0%{transform: translate(-50%) scale(1.2);}
+                100%{transform: translate(-50%) scale(1);}
+            }
+
+            div.animado{
+                animation-name: transito;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+                text-transform: uppercase;
+                float:right;
+            }
+
+            @keyframes movimiento{
+                from{
+                    width: 100px;
+                    height: 150px;
+                    transform: translate(250%);
+                }
+                to{
+                    width: 150px;
+                    height: 100px;
+                    transform: translate(300%);
+                }
+            }
+
+            div.animation{
+                animation-name: movimiento;
+                animation-duration: 7s;
+                width: 10%;
+                position: absolute;
+                animation-iteration-count: infinite;
+            }
+
+
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                justify-content:center;
+                margin: 60px;
+            }
+
+            .fuera{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                width: 250px;
+                padding: 15px 15px 15px 15px;
+                border-style: solid;
+            }
+
+
+
+            .dropdown{
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content{
+                display: none;
+                position: absolute;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px;
+                padding: 12px 16px;
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content{
+                display: block;
+                transform: translate(50px,5px);
+            }
+
+            ul{
+                margin-bottom: 30px;
+                list-style-type: none;
+                overflow: visible;
+                background-color: rgb(33, 33, 112);
+            }
+
+            li{
+                float:left;
+            }
+
+            li a{
+                display: block;
+                background-color: rgb(13, 13, 117);
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover{
+                background-color: rgb(12, 73, 73);
+            }
+
+            ul ul{
+                margin: 0;
+                list-style-type: none;
+                overflow: visible;
+                padding: 0;
+                z-index: 0;
+                background-color: teal;
+                display: flex;
+                flex-direction: column;
+            }
+
+
+
+            #Res{
+                text-align: center;
+            }
+
+            #Per-principales{
+                text-align: left;
+            }
+
+            #Fueron{
+                text-align: right;
+            }
+
+            header{
+                background-image: url(https://kaylaquigley.files.wordpress.com/2016/05/greys-anatomy.jpeg);
+                padding: 165px;
+            }
+
+            body{
+                background-color: rgb(69, 129, 129);
+                margin: 0 30px;
+            }
+
+
+
+            @font-face{
+                font-family: buffalo;
+                src: url(Fuentes/buffalo-inline-2-grunge.ttf);
+            }
+
+            div.fuente{
+                animation-name: none;
+                color: black;
+                font-size: 80px;
+                padding: 20px;
+                text-align: center;
+                font-family: buffalo;
+            }
+
+            @font-face{
+                font-family: onblack;
+                src: url(Fuentes/white-on-black.ttf);
+            }
+
+            div.Fuente2{
+                animation-name: none;
+                background-color: rgb(72, 114, 114);
+                color: black;
+                font-size: 50px;
+                padding: 20px;
+                text-align: center;
+                font-family: onblack;
+            }
+
+
+
+            h1{
+                margin: 16px 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 200;
+                font-size: 18px;
+                align-items: center;
+                text-align: center;
+                font-weight: bolder;
+            }
+
+            h3{
+                text-align: center;
+                font-size: 20px;
+                text-transform:capitalize;
+                padding: 40px;
+                margin: 40px;
+                background-color: cadetblue;
+                
+            }
+
+            footer{
+                text-align: center;
+                background-color: rgb(104, 150, 150);
+            }
+
+            h4{
+                margin: 16px 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 200;
+                font-size: 18px;
+                align-items: center;
+                font-weight: bold;
+            }
+
+            .big-size{
+                font-size: 30px;
+                
+                
+            }
+
+            #abajo{
+                text-align: center;
+                font-weight: bolder;
+                padding: 5px;
+                font-size: 30px;
+            }
+        }
+
     
-    @font-face {
-        font-family: 'icomoon';
-        src:  url('Fuentes/icomoon.eot?w2wxds');
-        src:  url('Fuentes/icomoon.eot?w2wxds#iefix') format('embedded-opentype'),
-            url('Fuentes/icomoon.ttf?w2wxds') format('truetype'),
-            url('Fuentes/icomoon.woff?w2wxds') format('woff'),
-            url('Fuentes/icomoon.svg?w2wxds#icomoon') format('svg');
-        font-weight: normal;
-        font-style: normal;
-        font-display: block;
-    }
-
-  [class^="icon-"], [class*=" icon-"] {
-        /* use !important to prevent issues with browser extensions that change fonts */
-        font-family: 'icomoon' !important;
-        speak: never;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-
-        /* Better Font Rendering =========== */
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-  .icon-corazon .path1:before {
-        content: "\e900";
-        color: rgb(27, 57, 84);
-    }
-  .icon-corazon .path2:before {
-        content: "\e901";
-        margin-left: -1em;
-        color: rgb(27, 57, 84);
-    }
-  .icon-corazon .path3:before {
-        content: "\e902";
-        margin-left: -1em;
-        color: rgb(22, 173, 225);
-    }
-  .icon-corazon .path4:before {
-        content: "\e903";
-        margin-left: -1em;
-        color: rgb(27, 57, 84);
-    }
-  .icon-cruz:before {
-        content: "\e904";
-        color: #319997;
-    }
-  .icon-folder:before {
-        content: "\e931";
-    }
-
-
-
-    @keyframes transito{
-        0%{color: rgb(76, 99, 173);}
-        100%{color: black;}
-        0%{transform: translate(-50%) scale(1.2);}
-        100%{transform: translate(-50%) scale(1);}
-    }
-
-    div.animado{
-        animation-name: transito;
-        animation-duration: 8s;
-        animation-iteration-count: infinite;
-        text-transform: uppercase;
-        float:right;
-    }
-
-    @keyframes movimiento{
-        from{
-            width: 100px;
-            height: 150px;
-            transform: translate(250%);
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('Fuentes/icomoon.eot?w2wxds');
+            src:  url('Fuentes/icomoon.eot?w2wxds#iefix') format('embedded-opentype'),
+                url('Fuentes/icomoon.ttf?w2wxds') format('truetype'),
+                url('Fuentes/icomoon.woff?w2wxds') format('woff'),
+                url('Fuentes/icomoon.svg?w2wxds#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
         }
-        to{
-            width: 150px;
-            height: 100px;
-            transform: translate(300%);
+
+        [class^="icon-"], [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'icomoon' !important;
+            speak: never;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-    }
 
-    div.animation{
-        animation-name: movimiento;
-        animation-duration: 7s;
-        width: 10%;
-        position: absolute;
-        animation-iteration-count: infinite;
-    }
-
-
-    .grid-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        justify-content:center;
-        margin: 60px;
-    }
-
-    .fuera{
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 3;
-        width: 250px;
-        padding: 15px 15px 15px 15px;
-        border-style: solid;
-    }
-
-
-
-    .dropdown{
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content{
-        display: none;
-        position: absolute;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px;
-        padding: 12px 16px;
-        z-index: 1;
-    }
-
-    .dropdown:hover .dropdown-content{
-        display: block;
-        transform: translate(50px,5px);
-    }
-
-    ul{
-        margin-bottom: 30px;
-        list-style-type: none;
-        overflow: visible;
-        background-color: rgb(33, 33, 112);
-    }
-
-    li{
-        float:left;
-    }
-
-    li a{
-        display: block;
-        background-color: rgb(13, 13, 117);
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a:hover{
-        background-color: rgb(12, 73, 73);
-    }
-
-    ul ul{
-        margin: 0;
-        list-style-type: none;
-        overflow: visible;
-        padding: 0;
-        z-index: 0;
-        background-color: teal;
-        display: flex;
-        flex-direction: column;
-    }
+        .icon-corazon .path1:before {
+                content: "\e900";
+                color: rgb(27, 57, 84);
+            }
+        .icon-corazon .path2:before {
+                content: "\e901";
+                margin-left: -1em;
+                color: rgb(27, 57, 84);
+            }
+        .icon-corazon .path3:before {
+                content: "\e902";
+                margin-left: -1em;
+                color: rgb(22, 173, 225);
+            }
+        .icon-corazon .path4:before {
+                content: "\e903";
+                margin-left: -1em;
+                color: rgb(27, 57, 84);
+            }
+        .icon-cruz:before {
+                content: "\e904";
+                color: #319997;
+            }
+        .icon-folder:before {
+                content: "\e931";
+            }
 
 
 
-    #Res{
-        text-align: center;
-    }
+        @keyframes transito{
+            0%{color: rgb(76, 99, 173);}
+            100%{color: black;}
+            0%{transform: translate(-50%) scale(1.2);}
+            100%{transform: translate(-50%) scale(1);}
+        }
 
-    #Per-principales{
-        text-align: left;
-    }
+        div.animado{
+            animation-name: transito;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            text-transform: uppercase;
+            float:right;
+        }
 
-    #Fueron{
-        text-align: right;
-    }
+        @keyframes movimiento{
+            from{
+                width: 100px;
+                height: 150px;
+                transform: translate(250%);
+            }
+            to{
+                width: 150px;
+                height: 100px;
+                transform: translate(300%);
+            }
+        }
 
-    header{
-        background-image: url(https://kaylaquigley.files.wordpress.com/2016/05/greys-anatomy.jpeg);
-        padding: 165px;
-    }
-
-    body{
-        background-color: rgb(69, 129, 129);
-        margin: 0 30px;
-    }
-
-
-
-    @font-face{
-        font-family: buffalo;
-        src: url(Fuentes/buffalo-inline-2-grunge.ttf);
-    }
-
-    div.fuente{
-        animation-name: none;
-        color: black;
-        font-size: 80px;
-        padding: 20px;
-        text-align: center;
-        font-family: buffalo;
-    }
-
-    @font-face{
-        font-family: onblack;
-        src: url(Fuentes/white-on-black.ttf);
-    }
-
-    div.Fuente2{
-        animation-name: none;
-        background-color: rgb(72, 114, 114);
-        color: black;
-        font-size: 50px;
-        padding: 20px;
-        text-align: center;
-        font-family: onblack;
-    }
+        div.animation{
+            animation-name: movimiento;
+            animation-duration: 7s;
+            width: 10%;
+            position: absolute;
+            animation-iteration-count: infinite;
+        }
 
 
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            justify-content:center;
+            margin: 60px;
+        }
 
-    h1{
-        margin: 16px 0;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 200;
-        font-size: 18px;
-        align-items: center;
-        text-align: center;
-        font-weight: bolder;
-    }
+        .fuera{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            width: 250px;
+            padding: 15px 15px 15px 15px;
+            border-style: solid;
+        }
 
-    h3{
-        text-align: center;
-        font-size: 20px;
-        text-transform:capitalize;
-        padding: 40px;
-        margin: 40px;
-        background-color: cadetblue;
-        
-    }
 
-    footer{
-        text-align: center;
-        background-color: rgb(104, 150, 150);
-    }
 
-    h4{
-        margin: 16px 0;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 200;
-        font-size: 18px;
-        align-items: center;
-        font-weight: bold;
-    }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
 
-    .big-size{
-        font-size: 30px;
-        
-        
-    }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px;
+            padding: 12px 16px;
+            z-index: 1;
+        }
 
-    #abajo{
-        text-align: center;
-        font-weight: bolder;
-        padding: 5px;
-        font-size: 30px;
-    }
+        .dropdown:hover .dropdown-content{
+            display: block;
+            transform: translate(50px,5px);
+        }
+
+        ul{
+            margin-bottom: 30px;
+            list-style-type: none;
+            overflow: visible;
+            background-color: rgb(33, 33, 112);
+        }
+
+        li{
+            float:left;
+        }
+
+        li a{
+            display: block;
+            background-color: rgb(13, 13, 117);
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover{
+            background-color: rgb(12, 73, 73);
+        }
+
+        ul ul{
+            margin: 0;
+            list-style-type: none;
+            overflow: visible;
+            padding: 0;
+            z-index: 0;
+            background-color: teal;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        #Res{
+            text-align: center;
+        }
+
+        #Per-principales{
+            text-align: left;
+        }
+
+        #Fueron{
+            text-align: right;
+        }
+
+        header{
+            background-image: url(https://kaylaquigley.files.wordpress.com/2016/05/greys-anatomy.jpeg);
+            padding: 165px;
+        }
+
+        body{
+            background-color: rgb(69, 129, 129);
+            margin: 0 30px;
+        }
+
+
+
+        @font-face{
+            font-family: buffalo;
+            src: url(Fuentes/buffalo-inline-2-grunge.ttf);
+        }
+
+        div.fuente{
+            animation-name: none;
+            color: black;
+            font-size: 80px;
+            padding: 20px;
+            text-align: center;
+            font-family: buffalo;
+        }
+
+        @font-face{
+            font-family: onblack;
+            src: url(Fuentes/white-on-black.ttf);
+        }
+
+        div.Fuente2{
+            animation-name: none;
+            background-color: rgb(72, 114, 114);
+            color: black;
+            font-size: 50px;
+            padding: 20px;
+            text-align: center;
+            font-family: onblack;
+        }
+
+
+
+        h1{
+            margin: 16px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 200;
+            font-size: 18px;
+            align-items: center;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        h3{
+            text-align: center;
+            font-size: 20px;
+            text-transform:capitalize;
+            padding: 40px;
+            margin: 40px;
+            background-color: cadetblue;
+            
+        }
+
+        footer{
+            text-align: center;
+            background-color: rgb(104, 150, 150);
+        }
+
+        h4{
+            margin: 16px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 200;
+            font-size: 18px;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .big-size{
+            font-size: 30px;
+            
+            
+        }
+
+        #abajo{
+            text-align: center;
+            font-weight: bolder;
+            padding: 5px;
+            font-size: 30px;
+        }
 
     </style>
 </head>
